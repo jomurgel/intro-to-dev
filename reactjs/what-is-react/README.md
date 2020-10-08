@@ -3,7 +3,7 @@
 
 React is a JavaScript library for creating interactive applications. It is a declarative programming paradigm, and I recommend checking out [this blog](https://codeburst.io/declarative-vs-imperative-programming-a8a7c93d9ad2) describing the the difference between declarative and imperative programming.
 
-React utilizes self-contained blocks of code called components which provide more flexibility and reusability that can handle self-contained `state` and recieve data from other components in the form of `props` which we'll talk about in a later lesson [TBD]().
+React utilizes self-contained blocks of code called components which provide more flexibility and reusability that can handle self-contained `state` and receive data from other components in the form of `props` which we'll talk about in a later lesson [TBD]().
 
 ## Table of Contents
 - [Components](#components)
@@ -43,12 +43,12 @@ class classComponent extends React.Component {
 
 Both examples above are equivalent once passed through a [preprocessor](https://babeljs.io/), and have their own pros and cons.
 
-Before the recent introducton of [React Hooks](https://reactjs.org/docs/hooks-intro.html) the only way to utilize state within a component was by using a Class component. However, hooks now allow us to take advantage of most of the React [Lifecycle](https://www.w3schools.com/react/react_lifecycle.asp) within a Functional component. We'll talk about this in later lessons [TBD]().
+Before the recent introduction of [React Hooks](https://reactjs.org/docs/hooks-intro.html) the only way to utilize state within a component was by using a Class component. However, hooks now allow us to take advantage of most of the React [Lifecycle](https://www.w3schools.com/react/react_lifecycle.asp) within a Functional component. We'll talk about this in later lessons [TBD]().
 
-You can read about convering a [function to a class](https://reactjs.org/docs/state-and-lifecycle.html#converting-a-function-to-a-class) or [class to a function](https://www.digitalocean.com/community/tutorials/react-converting-to-a-hook) with these links.
+You can read about converting a [function to a class](https://reactjs.org/docs/state-and-lifecycle.html#converting-a-function-to-a-class) or [class to a function](https://www.digitalocean.com/community/tutorials/react-converting-to-a-hook) with these links.
 
 ## *this*
-Since we'll be starting off with Class or Stateful components you might wonder what *`this`* is. It is a keyword which references some JavaScript elemment. In this case *`this`* refers to the comonent we're inside. For example, our component named `classComponent` above is what *`this`* refers to in the context of React.
+Since we'll be starting off with Class or Stateful components you might wonder what *`this`* is. It is a keyword which references some JavaScript element. In this case *`this`* refers to the component we're inside. For example, our component named `classComponent` above is what *`this`* refers to in the context of React.
 
 Learn more about *`this`* [here](https://medium.com/byte-sized-react/what-is-this-in-react-25c62c31480).
 
