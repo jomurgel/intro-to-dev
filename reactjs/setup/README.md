@@ -28,7 +28,7 @@ That said, we're going to get this running in a way that would be most common in
 - A mighty thirst for knowledge!
 
 ## Getting Started
-Let's setup somewhere on our computer. I'll work from the Desktop folder since that's easy. We'll create a new directory for our project and call it `setup-test` like this.
+Let's setup somewhere on our computer. I'll work from the Desktop folder since that's easy. We'll create a new directory for our project and call it `setup-test` like this. In this lesson we can skip this step, I'll be initializing npm (next step) and building this app directly inside the `setup` directory.
 
 ``` bash
 mkdir setup-test && cd $_
