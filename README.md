@@ -3,5 +3,5 @@ I'll try and teach you something about the following technologies. These will in
 
 Find something wrong or out of date? [Submit a PR](https://github.com/jomurgel/intro-to-dev/pulls)!
 
-## [React.js](reactjs).
+## 1. [React.js](reactjs).
 Let's build a React app from the ground up without using [Create React App](https://reactjs.org/docs/create-a-new-react-app.html).
