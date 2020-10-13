@@ -206,4 +206,27 @@ Save, and the result should be "This is our Title Component" above much smaller 
 ### Exercise One
 Complete the same steps and create a third component called `Content`, import, and include it in the `App.js` file. We want our "Hello World, Woo!" to exist inside it's own component rather than writing the `div` and enclosing content explicitly.
 
-## What are Props?
+### What are Props?
+Props is a reserved keyword in React. Props are just like function arguments passed into a JavaScript function or attributes you might pass into an HTML element.
+
+Props is an `Object` containing key/value pairs.
+
+For example, without explaining how we created this object just yet we might have a props object that looks like this:
+
+```js
+{
+  name: 'Jane Smith',
+  age: 45,
+}
+```
+
+We would reference a prop the same way we might reference a key/value in an object directly.
+
+```js
+props.name; // Jane Smith
+props.age; // 45
+```
+
+So if were were to bring this into a React context we would follow the same rules. So let's start using props in the app we're building to help understand this a bit further.
+
+### Using Props
