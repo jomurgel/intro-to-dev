@@ -154,7 +154,7 @@ const HtmlWebPackPlugin = require( 'html-webpack-plugin' );
 Next, we'll create a new directory at the root of our `setup-test` folder called `src`. This is where we'll store our JavaScript and our `index.html` file that React will need to render.
 
 ``` bash
-mkdir -p src && cd src && touch index.html
+mkdir src && cd src && touch index.html
 ```
 
 Then we'll add the plugin array and take advantage of the settings
