@@ -4,7 +4,10 @@ This folder includes a tutorial and some exercises about building a simple React
 ## Lessons
 - [What is React.js](what-is-react) — A quick primer for React.js.
 - [Setting up a Local from Scratch](setup) — Learn to set up a React.js site from scratch without using [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html).
-- [Components](learn-components) — Working with an understanding components.
+- [Components](learn-components) — Working with an understanding components, props, and state.
+- Using JavaScript Functions — A walkthrough of setting up, binding, and utilizing functions in React.
+- React Hooks — Understanding the function of available React Hooks and what they attempt to accomplish.
+- Updating React — Converting Class Components to Functional Components.
 
 ## Resources
 - [Hello World](https://reactjs.org/docs/hello-world.html) — Learn React directly from [reactjs.org](https://reactjs.org).
