@@ -9,6 +9,7 @@ From [What is React](what-is-react) we learned about Function/Functional and Cla
 - [Building Our First Component](#building-our-first-component)
 - [Importing Our New Component](#importing-our-new-component)
 - [Props](#props)
+- [State](#state)
 
 ## Setup
 For this we'll want to make sure that you've `cd` into the components lesson folder.
@@ -230,3 +231,135 @@ props.age; // 45
 So if were were to bring this into a React context we would follow the same rules. So let's start using props in the app we're building to help understand this a bit further.
 
 ### Using Props
+Using props is easy, it is exactly like adding an attribute to a div. Let's start by adding a new prop to our `Title` component. Let's say we want to reuse this component to have the same output on different views, but we want the language to change. Perfect case for reusability. So let's add a prop to our `Title` component in our `App.js` file.
+
+```js
+<Title text="We've Passed Props!" />
+```
+
+Then let's move to our `Title.js` file. We want to replace the content between our `<h1>` tags with our props. We'll do that by using `this.props.text`, and since we're utilizing `JSX` we'll wrap that in curley brackets like this:
+
+```js
+<h1>{this.props.text}</h1>
+```
+
+Success! We've successfully utilized props in a React context to pass content from our parent `App.js` file, through the `Title` component and utilized it in the `Title.js` render method.
+
+But let's look at this a little differently. The way we've built our component assumes we have our `text` props. So if we were to remoe the props from our `Title` component in `App.js` we would still return `<h1></h1>` but no content, and that may not be desired.
+
+We have three options here and I'll go through all three so we have an idea of what options we have to solve for our problem.
+
+#### Conditional Props
+The simplest solution might be to include a [logical operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR) if we always want an `h1`, but don't always want to set the value of the text.
+
+```js
+<h1>{this.props.text || 'Alternative Heading'}</h1>
+```
+
+If we don't include the `text` props, we would display our `h1` with "Alternative Heading" text instead.
+
+#### Default Props
+We could also take advantage of `defaultProps` to set the default of the prop. This is essentially setting a default value for any prop we have.
+
+I would suggest reading that documentation to learn more about the power of PropTypes and defaultProps, but here's a simple use case.
+
+Since we're using our Class Component we'll add a declaration for our `defaultProps` directly for the `Title` component. We'd end up with something like this.
+
+```js
+import React from 'react';
+
+class Title extends React.PureComponent {
+  render() {
+    return <h1>{this.props.text}</h1>;
+  }
+}
+
+/**
+ * Set initial props.
+ * @type {object}
+ */
+Title.defaultProps = {
+  text: 'Alternative Title',
+};
+
+export default Title;
+```
+
+Removing props, just like we did in the [Conditional Props](#conditional-props) example, would render our fallback option. A little more work, but perhaps a little more understandable and flexible for the future.
+
+#### Bail Early
+Another option would be to prevent the component from rendering entirely if no props exist. This would only work if:
+1. We only have one prop or one main required prop.
+2. We don't need or want a default value.
+
+We would first check that we have a value for the `text` prop, and then return if we do not.
+
+```js
+export default class Title extends React.PureComponent {
+  render() {
+    if (! this.props.text) {
+      return;
+    }
+    return <h1>{this.props.text}</h1>;
+  }
+}
+```
+
+This would prevent the component from rendering anything if we don't have the props.
+
+The last option we might have, the most complex, but my favorite option, would be to take advantage of [PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html) to determine a prop type and whether or not it is required.
+
+#### Requiring Props
+I'd suggest reading the PropType documentation above, but we can create a simple use case or requiring a prop like this.
+
+First we'll install the depencendy, required by React v15.5+.
+
+```bash
+npm install prop-types --save-dev
+```
+
+And then import the dependency into our `Title.js` file.
+
+```js
+import PropTypes from 'prop-types';
+```
+
+Next, much like we did with `defaultProps` we'll add a new `Title.propTypes` object and define our Prop Type for `text`.
+
+```js
+import React from 'react';
+import PropTypes from 'prop-types';
+
+class Title extends React.PureComponent {
+  render() {
+    return <h1>{this.props.text}</h1>;
+  }
+}
+
+/**
+ * Set props types.
+ * @type {object}
+ */
+Title.propTypes = {
+  text: PropTypes.string.isRequired,
+};
+
+export default Title;
+```
+
+If we were to remove that props from our `Title` component in `App.js` we would see the following error in the console.
+
+```
+Warning: Failed prop type: The prop `text` is marked as required in `Title`, but its value is `undefined`.
+```
+
+Which we can quickly remedy by re-adding our `text` props to our component.
+
+#### Best Option?
+What's the best option here? I'd argue that the best option would be to take advantage of the `PropTypes` package and really define what a prop should be, whether or not it's required, and set `defaultProps` for each, if applicable.
+
+NOTE: Required props do not require `defaultProps`.
+
+But I would also argue that if you don't want or need a large bundle you could do without the `PropTypes` package and handle it one of the other ways. I'd recommend this for simple executions, but when building larger applications or features, `PropTypes` is 100% the way to go, maybe in combination with any of the above.
+
+## State
