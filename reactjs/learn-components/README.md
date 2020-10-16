@@ -363,3 +363,129 @@ NOTE: Required props do not require `defaultProps`.
 But I would also argue that if you don't want or need a large bundle you could do without the `PropTypes` package and handle it one of the other ways. I'd recommend this for simple executions, but when building larger applications or features, `PropTypes` is 100% the way to go, maybe in combination with any of the above.
 
 ## State
+[State](https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class) does not get passed from parent to child like Props it is completely self-contained in the component itself. It is data set by, updated by, and read by the Component.
+
+We'll learn about state a little differently when we convert our Class Components into Functional components later, but if you feel the desire to learn again, you can check out that information [here](https://reactjs.org/docs/hooks-state.html).
+
+Let's start by adding a [constructor](https://reactjs.org/docs/react-component.html#constructor). This is a function called before the component is mounted, so we can set some default variables or bind functions.
+
+>Typically, in React constructors are only used for two purposes:
+>- Initializing local state by assigning an object to this.state.
+>- Binding event handler methods to an instance.
+
+Our `constructor` requires a subClass called `super` which will define the existence of props, otherwise `this.props` would be undefined, which obviously we don't want.
+
+So let's add our constructor and define some state. But first, let's talk about how we might use state.
+
+State would be something that we would want to provide an update to or track the change of specifically inside our `Title` component.
+
+For now, I think we'll update our `App.js` component, even though I said we wouldn't. I want to do this because we'll eventually build out a toggle for changing from light to dark mode in our app.
+
+So let's go to our `App.js` file and add a constructor with state. We'll be adding a checkbox to toggle some value; do something if toggled, else do something else. So a `boolean` would be a good use case for this. So let's assume our state starts with a value of false.
+
+I'll call my state value `isDark`. We'll add this right above our `render` method.
+
+```js
+constructor(props) {
+  super(props);
+
+  this.state = {
+    isDark: false,
+  }
+}
+```
+
+Next we need a way to change the value of our state. Fortunatly React provides a default function called `setState` to do so in a Class Component. But we still need to fire that function in the first place.
+
+This is a great case for a `button`. Buttons serve this exact purpose, to fire some function or trigger some change.
+
+So let's work backward and add our `button` first. This will not be a component (though it could be) and instead just be a standard HTML button. We'd know this at a glance because we're creating a `<button>` and not a `<Button>` for example.
+
+Below our `<div>` in `App.js` we'll add our button. We basically need only two properties on our button. The type (required for semantic HTML) and `onClick` which is and event handler that we'll leverage to update state.
+
+```js
+<button
+  onClick={}
+  type="button"
+>
+  Toggle Mode
+</button>
+```
+
+Our `onClick` handler accepts a function, so we'd do something like this:
+
+```js
+onClick={() => setState()}
+```
+
+In this case we want to set the value of `isDark` in our state object to be the opposite value that exists by default. So if `false`, set to `true` or if `true` set to `false`.
+
+We can use a logical "not" oprator to reverse the value already defined like this:
+
+```js
+onClick={() => this.setState({ isDark: ! this.state.isDark })}
+```
+
+State expects an object where we set a new value of the state object key.
+
+```js
+{
+  isDark: ! this.state.isDark,
+}
+```
+
+If we were to look at our app we should now see a button, but if we click the button, nothing happens visually, yet.
+
+Let's add a simple line of text with a logical operator to define the text of our button so we can either "Toggle to Light" or "Toggle to Dark".
+
+```js
+<button
+  onClick={() => this.setState({ isDark: ! this.state.isDark })}
+  type="button"
+>
+  Toggle to {this.state.isDark ? 'Light' : 'Dark'}
+</button>
+```
+
+Now toggling the button should go from "Toggle to Light" to "Toggle to Dark" on click.
+
+Our final component would look like this so far:
+
+```js
+import React from 'react';
+import Title from './Title';
+
+export default class App extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isDark: false,
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <button
+          onClick={() => this.setState({ isDark: ! this.state.isDark })}
+          type="button"
+        >
+          Toggle to {this.state.isDark ? 'Light' : 'Dark'}
+        </button>
+        <Title text="We've Passed Props!" />
+        <div>Hello World, Woo!</div>
+      </div>
+    );
+  }
+}
+```
+
+So to summerize our use of state here were are:
+- Setting up our Class Component to accept state using the `contstructor`.
+- Setting the name and default value of our state object in our `constructor`.
+- Adding a new feature with an `onClick` handler to trigger a change of state.
+- Utilized the React `setState` function to handle the change of state value.
+- Modified language of our button visually to confirm our toggle works.
+
+Obviously at this point there is nothing else happening when we toggle our button, but that will take place later on down the line when we discuss the [Context API](https://reactjs.org/docs/context.html).
