@@ -23,11 +23,16 @@ Here you'll find our app as we left it off. Run `npm install` and `npm run start
 ## Our Goal
 Before I get into building with components I should talk about our end goal here. Of course we're going to learn React, but we should do more than just understand how the parts work and build something functional.
 
-The goal here will be to build a data visualization dashboard to display COVID-19 *(Valid topic as of 10/12/2020)* numbers utilize a third party graph package, the https://covidtracking.com/data/api API and the use of props and local state.
+Our goal will be to keep it simple. Together we'll attempt to gain an understanding of how React works in the real world, and hopefully a decent understanding of what might be expected of a new developer working with React. We'll be creating a simple Lorem Ipsum one-page app with a theme toggle.
 
-Together we'll have a promising understanding of how React works in the real world, and hopefully a decent understanding of what might be expected of a new developer working with React.
+This should give us a general understanding of the following principles/functionality:
+- Props
+- State
+- JSX
+- React Hooks
+- Context API
 
-The look and feel of this dashboard will be up to us, though we have access to custom CSS, [Styled Components](https://styled-components.com/), and pre-existing frameworks should we need or want them.
+The look and feel of this one-page app will be up to us, though we have access to custom CSS, [Styled Components](https://styled-components.com/), and pre-existing frameworks should we need or want them.
 
 ## Building Our First Component
 Inside our `src`, and inside our `js` folder let's create a new folder called `components` and create one component and we'll just call the file `App.js` for now.
@@ -286,6 +291,46 @@ export default Title;
 ```
 
 Removing props, just like we did in the [Conditional Props](#conditional-props) example, would render our fallback option. A little more work, but perhaps a little more understandable and flexible for the future.
+
+Just to note we don't have to move our `defaultProps` or `export default` statement at all, necessarily. We could write the same thing above like this:
+
+```js
+import React from 'react';
+
+export default class Title extends React.PureComponent {
+  /**
+   * Set initial props.
+   * @type {object}
+   */
+  static defaultProps = {
+    text: 'Alternative Title',
+  };
+  render() {
+    return <h1>{this.props.text}</h1>;
+  }
+}
+```
+
+This self-cointains our defaultProps (and future work) to be inside the class component. However, this isn't handled by default with our current webpack or babel configs. If we wanted to support this we would do the following.
+
+``` bash
+npm install @babel/plugin-syntax-class-properties babel-plugin-transform-class-properties --save-dev
+```
+
+And then update our `.babelrc` file.
+
+```json
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-class-properties",
+    "transform-class-properties"
+  ]
+}
+```
 
 #### Bail Early
 Another option would be to prevent the component from rendering entirely if no props exist. This would only work if:

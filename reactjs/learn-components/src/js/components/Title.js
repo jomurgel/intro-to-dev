@@ -1,17 +1,15 @@
 import React from 'react';
 
-class Title extends React.Component {
+export default class Title extends React.Component {
+	/**
+	 * Set initial props.
+	 * @type {object}
+	 */
+	static defaultProps = {
+		text: 'Alternative Title',
+	};
+
 	render() {
 		return <h1>{this.props.text}</h1>;
 	}
 }
-
-/**
- * Set initial props.
- * @type {object}
- */
-Title.defaultProps = {
-	text: 'Alternative Title',
-};
-
-export default Title;
