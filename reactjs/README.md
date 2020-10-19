@@ -8,6 +8,7 @@ This folder includes a tutorial and some exercises about building a simple React
 - Using JavaScript Functions — A walkthrough of setting up, binding, and utilizing functions in React.
 - React Hooks — Understanding the function of available React Hooks and what they attempt to accomplish.
 - Updating React — Converting Class Components to Functional Components.
+- Context API — Understand the React Context API and Add a simple custom theme for consumption.
 
 ## Resources
 - [Hello World](https://reactjs.org/docs/hello-world.html) — Learn React directly from [reactjs.org](https://reactjs.org).
