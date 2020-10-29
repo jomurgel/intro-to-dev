@@ -6,8 +6,8 @@ This folder includes a tutorial and some exercises about building a simple React
 - [Setting up a Local from Scratch](setup) — Learn to set up a React.js site from scratch without using [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html).
 - [Components](learn-components) — Working with an understanding components, props, and state.
 - [Javascript Functions](javascript-functions) — A walkthrough of setting up, binding, and utilizing functions in React.
-- React Hooks — Understanding the function of available React Hooks and what they attempt to accomplish.
-- Updating React — Converting Class Components to Functional Components.
+- [React Hooks](react-hooks) — Understanding the function of available React Hooks and what they attempt to accomplish.
+- [Upgrading to Functional Components](updating-components) — Converting Class Components to Functional Components.
 - Context API — Understand the React Context API and Add a simple custom theme for consumption.
 
 ## Resources
