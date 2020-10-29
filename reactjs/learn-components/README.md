@@ -1,7 +1,7 @@
 # Components
 > Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components.
 
-From [What is React](what-is-react) we learned about Function/Functional and Class/Stateful Components. We built a simple React app in [Setting up a Local from Scratch](../setup/README.md#setup) which displays a `div` with some text. So let's start building that app out with React components.
+From [What is React](../what-is-react/README.md) we learned about Function/Functional and Class/Stateful Components. We built a simple React app in [Setting up a Local from Scratch](../setup/README.md#setup) which displays a `div` with some text. So let's start building that app out with React components.
 
 ## Table of Contents
 - [Setup](#setup)
