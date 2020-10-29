@@ -148,4 +148,4 @@ Which would output:
 Local variables are created when the function in invoked and are removed one the function value is returned ensuring that the value does not affect anything outside of the scope of the function.
 
 ## Summation
-We talked through this only because functions in the form of click/event handlers, service functions for manipulating data, and utility functions for providing reusable sets of features are important in building a clean and efficient code base. We will be talking about the importance of [DRY](https://www.drycode.io/) code in the next module [Upgrading to Functional Components](../updating-components/README.md).
+We talked through this only because functions in the form of click/event handlers, service functions for manipulating data, and utility functions for providing reusable sets of features are important in building a clean and efficient code base. We will be talking about the importance of [DRY](https://www.drycode.io/) code in a future module [Upgrading to Functional Components](../updating-components/README.md).
