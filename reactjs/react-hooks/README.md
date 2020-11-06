@@ -7,7 +7,7 @@ I also fully recommend the [Video Introduction](https://www.youtube.com/watch?v=
 
 This module will hit the top-used Hooks available to make replacing our Class Components with Functional components possible, and touch on the use of custom hooks in the future.
 
-In this module we'll be looking at `useState`, `useEffect`, and `useContext` specifically. 
+In this module we'll be looking at `useState`, `useEffect`, and `useContext` specifically.
 
 ## Table of Contents
 - [What is a Hook?](#what-is-a-hook)
@@ -261,7 +261,7 @@ const colors = {
   blue: '#001382',
 };
 
-export const ColorContext = React.createContext(colors.blue);
+export const ColorContext = React.createContext(null);
 
 const App = () => (
   <ColorContext.Provider value={colors}>
@@ -280,4 +280,5 @@ const Home = () = {
 Functionally the same, the markup is far clearer as to what you're consuming, and how you consume it.
 
 ## Additional Reading
-Read up on additional built-in Hooks or creating custom hooks [here](https://reactjs.org/docs/hooks-reference.html#additional-hooks).
+- Read up on additional built-in Hooks or creating custom hooks [here](https://reactjs.org/docs/hooks-reference.html#additional-hooks).
+- [useContext by Robin Wieruch](https://www.robinwieruch.de/react-usecontext-hook)
