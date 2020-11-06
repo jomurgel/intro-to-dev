@@ -8,6 +8,8 @@ In order to have a good understanding of how one could use React proficiently yo
 - [ES5 vs ES6+ functions](#es5j-vs-es6-functions)
 - [Understanding language similarities](#understanding-language-similarities)
 - [Using params and variables](#using-params-and-variables)
+- [Summation](#summation)
+- [Additional Reading](#additional-reading)
 
 ## What is a function?
 - Functions are subprograms designed to perform a task.
@@ -222,3 +224,10 @@ Local variables are created when the function in invoked and are removed one the
 
 ## Summation
 We talked through this only because functions in the form of click/event handlers, service functions for manipulating data, and utility functions for providing reusable sets of features are important in building a clean and efficient code base. We will be talking about the importance of [DRY](https://www.drycode.io/) code in a future module [Upgrading to Functional Components](../updating-components/README.md).
+
+## Additional Resources
+- [W3 Schools JS Functions](https://www.w3schools.com/js/js_functions.asp)
+- [MDN JS Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+- [ES6 vs ES6 Functions](https://medium.com/recraftrelic/es5-vs-es6-with-example-code-9901fa0136fc)
+- [JS Functions Video](https://www.youtube.com/watch?v=N8ap4k_1QEQ)
+- [Javascript.info](https://javascript.info/function-basics)
