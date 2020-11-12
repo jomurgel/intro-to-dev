@@ -1,0 +1,30 @@
+{
+  "name": "setup",
+  "version": "1.0.0",
+  "description": "React offers a [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) package to rapidly spin up a React.js app. This is a great package, and there are dozens out there with various bells and whistles, but we're going to learn this from scratch. Even if we don't understand all of the technologies in use, we'll have a better idea of what's going on behind the scenes.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --hot --mode development",
+    "build": "webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-syntax-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "html-loader": "^1.3.1",
+    "html-webpack-plugin": "^4.5.0",
+    "prop-types": "^15.7.2",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
