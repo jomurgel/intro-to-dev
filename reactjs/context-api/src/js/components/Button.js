@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({
-  isDark,
-  setThemeState,
+  theme,
+  toggleTheme,
 }) => (
   <button
-    onClick={() => setThemeState(! isDark)}
+    onClick={() => toggleTheme()}
+    style={theme.button}
     type="button"
   >
-    {isDark ? 'Toggle to Light' : 'Toggle to Dark'}
+    {theme.dark ? 'Toggle to Light' : 'Toggle to Dark'}
   </button>
 );
 
@@ -19,8 +20,8 @@ const Button = ({
  * @type {object}
  */
 Button.propTypes = {
-  isDark: PropTypes.bool.isRequired,
-  setThemeState: PropTypes.func.isRequired,
+  theme: PropTypes.shape({}).isRequired,
+  toggleTheme: PropTypes.func.isRequired,
 };
 
 export default Button

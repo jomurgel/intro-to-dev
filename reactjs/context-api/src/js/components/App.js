@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 
 // Components.
 import Button from './Button';
 import Content from './Content';
 import Title from './Title';
 
+import { ThemeContext } from './ThemeProvider';
+
 const App = () => {
-  const [isDark, setThemeState] = useState(false);
+  const { themeType, theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <div>
+    <div style={theme.body}>
       <Button
-        isDark={isDark}
-        setThemeState={setThemeState}
+        theme={theme}
+        toggleTheme={toggleTheme}
       />
-      <Title isDark={isDark} />
-      <Content isDark={isDark} />
+      <Title theme={theme} themeType={theme} />
+      <Content theme={theme} themeType={theme} />
     </div>
   );
 }

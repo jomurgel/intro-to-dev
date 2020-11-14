@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Content = ({ isDark }) => <p>{isDark ? 'This is Dark Content.' : 'This is light content.'}</p>;
+const Content = ({ theme }) => <p style={theme.content}>Sometimes you look up at the sky and see the {theme.dark ? 'moon' : 'sun'}.</p>;
 
 /**
  * Set initial props.
@@ -9,7 +9,7 @@ const Content = ({ isDark }) => <p>{isDark ? 'This is Dark Content.' : 'This is 
  * @type {object}
  */
 Content.propTypes = {
-	isDark: PropTypes.bool.isRequired,
+  theme: PropTypes.shape({}).isRequired,
 };
 
 export default Content;
