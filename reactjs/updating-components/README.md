@@ -3,8 +3,8 @@ Now that we've learned the basics we're going to convert our existing app from u
 
 ## Table of Contents
 - [Getting Started](#getting-started)
-- [Table.js](#tablejs);
-- [App.js](#appjs);
+- [Table.js](#tablejs)
+- [App.js](#appjs)
 - [Adding a Few More](#adding-a-few-more)
 
 ## Getting started
