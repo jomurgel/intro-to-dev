@@ -1,17 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class Title extends React.Component {
-	/**
-	 * Set initial props.
-	 * @type {object}
+const Title = ({ text }) => <h1>{text}</h1>;
 
-	 */
-	static propTypes = {
-		text: PropTypes.string.isRequired,
-	};
+/**
+ * Set initial props.
+ * @type {object}
 
-	render() {
-		return <h1>{this.props.text}</h1>;
-	}
-}
+  */
+Title.propTypes = {
+  text: PropTypes.string.isRequired,
+};
+
+export default Title;
