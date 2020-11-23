@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { STYLES } from '../config/propTypes';
 
 const Button = ({
   theme,
-  toggleTheme,
+  setThemeState
 }) => (
   <button
-    onClick={() => toggleTheme()}
+    onClick={() => setThemeState()}
     style={theme.button}
     type="button"
   >
@@ -20,8 +21,8 @@ const Button = ({
  * @type {object}
  */
 Button.propTypes = {
-  theme: PropTypes.shape({}).isRequired,
-  toggleTheme: PropTypes.func.isRequired,
+  theme: PropTypes.shape(STYLES).isRequired,
+  setThemeState: PropTypes.func.isRequired,
 };
 
 export default Button

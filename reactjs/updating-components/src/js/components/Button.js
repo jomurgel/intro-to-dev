@@ -1,6 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Button = () => (
+const Button = ({
+  isDark
+}) => (
   <button
     onClick={() => setThemeState(! isDark)}
     type="button"
@@ -8,5 +11,15 @@ const Button = () => (
     {isDark ? 'Toggle to Light' : 'Toggle to Dark'}
   </button>
 );
+
+/**
+ * Set initial props.
+ *
+ * @type {object}
+ */
+Button.propTypes = {
+  isDark: PropTypes.bool.isRequired,
+  setThemeState: PropTypes.func.isRequired,
+};
 
 export default Button

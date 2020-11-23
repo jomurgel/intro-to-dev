@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Title = ({ text }) => <h1>{text}</h1>;
+const Title = ({ isDark }) => <h1>{isDark ? 'Dark Title' : 'Light Title!'}</h1>;
 
 /**
  * Set initial props.
+ *
  * @type {object}
-
-  */
+ */
 Title.propTypes = {
-  text: PropTypes.string.isRequired,
+	isDark: PropTypes.bool.isRequired,
 };
 
 export default Title;

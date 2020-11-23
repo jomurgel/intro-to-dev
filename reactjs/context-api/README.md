@@ -6,6 +6,12 @@ Making consuming data throughout our app a little nicer with React. Understand t
 - [ThemeProvider](#themeprovider)
 - [Hooking Things Up](#hooking-things-up)
 
+// CSS
+max-width: 100%
+
+// JS
+maxWidth: '100%'
+
 ## Basic Styles
 In order to take advantage of the Context API to allow us to toggle our theme, we need some styles.
 
@@ -125,7 +131,7 @@ So you might find a new `shared` variable. In writing these styles I realized th
 
 I've also added a `dark` value to help me later when determining which theme I'm using. I could pass additional values or make the process more manual, but I like having one set of data available with everything I need to do the job rather than relying on multiple things from multiple places.
 
-So what do we do now? Now we look at setting up our [ThemeProvider](#themeprovider) and taking advtantage of [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext) to hook things up.
+So what do we do now? Now we look at setting up our [ThemeProvider](#themeprovider) and taking advantage of [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext) to hook things up.
 
 We're also going to change the way that we use `useState` and centralize that toggle inside our `ThemeProvider`. That way, rather than having only one component have access to the value and setter for state, every component would which would provide our app with greater flexibility for growth in the future.
 
@@ -365,4 +371,4 @@ export default Title;
 ```
 
 ### PropTypes
-Now that our app is fully retrofited with the new theme and context we can go back and be a little more explicit about our PropTypes for our Theme.
+Now that our app is fully retrofitted with the new theme and context we can go back and be a little more explicit about our PropTypes for our Theme.

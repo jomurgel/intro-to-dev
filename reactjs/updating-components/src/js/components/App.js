@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+
+// Components.
 import Button from './Button';
 import Content from './Content';
 import Title from './Title';
@@ -7,9 +10,12 @@ const App = () => {
 
   return (
     <div>
-      <Button />
-      <Title text={isDark ? 'This is a Dark Prop!' : 'This is a Light Prop!'} />
-      <Content />
+      <Button
+        isDark={isDark}
+        setThemeState={setThemeState}
+      />
+      <Title isDark={isDark} />
+      <Content isDark={isDark} />
     </div>
   );
 }
